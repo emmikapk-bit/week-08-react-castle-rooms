@@ -4,18 +4,25 @@ import Castle from "./components/01_Castle";
 export default function App() {
   //creating state veriables
   const [question, setQuestion] = useState("");
-
+  const [answer, setAnswer] = useState("");
   const handleQuestion = (e) => {
     console.log(e);
     setQuestion(e.target.value);
   };
+  const handleAnswer = (e) => {
+    console.log(e);
+    setAnswer(e.target.value);
+  };
 
   return (
     <div className="pb-80 py-10 gap-y-4 flex flex-col justify-center items-center min-h-screen bg-gray-800 text-white">
-      <p className="text-purple-300">Massege for JSD12:</p>
-      <span className="text-yellow-300">
-        {/*Question or waiting for a massege*/}
-        {question ? question : "waiting for a massege"}
+      <h1 className="text-5xl">🚩 Learn React with Castle Rooms 🏰</h1>
+      <p className="text-white text-5xl">Massege for JSD12:</p>
+      <p className="text-purple-400 text-2xl">
+        Message for the Secret Room 🐎 🥷 ✉️ :
+      </p>
+      <span className="text-yellow-300 text-2xl">
+        {question ? question : "⏳ waiting for a massege..."}
       </span>
       <textarea
         value={question}
@@ -23,13 +30,11 @@ export default function App() {
         className="bg-white text-black rounded px-2 py-1"
         placeholder="type your massege here..."
       />
-      <p className="text-green-300">
-        Reply from Secret Room :
-        <span className="text-yellow-300">
-          {/*answer or waiting For a reply*/}
-        </span>
-      </p>
-      <Castle question={question} />
+      <p className="text-green-300 text-2xl">Reply from Secret Room :</p>
+      <span className="text-yellow-300  text-2xl">
+        {answer ? answer : "⏳ waiting for a massege..."}
+      </span>
+      <Castle question={question} answer={answer} handleAnswer={handleAnswer} />
     </div>
   );
 }

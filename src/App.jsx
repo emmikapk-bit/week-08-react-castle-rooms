@@ -1,5 +1,7 @@
 import { useState } from "react";
 import Castle from "./components/01_Castle";
+import SimpleAsyncAwait from "./examples/async/SimpleAsyncAwait";
+import ProSimpleAsyncAwait from "./examples/async/ProSimpleAsynsAwait";
 
 export default function App() {
   //creating state veriables
@@ -35,6 +37,7 @@ export default function App() {
         {answer ? answer : "⏳ waiting for a massege..."}
       </span>
       <Castle question={question} answer={answer} handleAnswer={handleAnswer} />
+      <ProSimpleAsyncAwait />
     </div>
   );
 }

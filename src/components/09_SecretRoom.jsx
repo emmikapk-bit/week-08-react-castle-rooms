@@ -1,6 +1,9 @@
-import Chamber from "./03_Chamber";
+import { useContext } from "react";
+import { MessageContext } from "../context/message-context/MessageContext";
 
-export default function SecretRoom({ question, answer, handleAnswer }) {
+export default function SecretRoom() {
+  const { question, answer, handleAnswer } = useContext(MessageContext);
+
   return (
     <div className="flex flex-col gap-y-4 justify-center items-center pt-10 bg-gray-800 w-full">
       <h1 className="text-3xl">SecretRoom</h1>
@@ -21,8 +24,6 @@ export default function SecretRoom({ question, answer, handleAnswer }) {
           {answer ? answer : "⏳  waiting for a massege..."}
         </span>
       </p>
-
-      {/*<Chamber/>*/}
     </div>
   );
 }

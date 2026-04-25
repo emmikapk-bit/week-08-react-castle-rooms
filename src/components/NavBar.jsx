@@ -1,7 +1,10 @@
-export default function NavBar() {
+export default function NavBar({ setpage }) {
   return (
     <div className="flex justify-center items-center font-bold bg-black gap-4 w-full h-18  ">
-      <button className="px-2 py-1 h-9  rounded-xl bg-gray-800 text-white hover:bg-yellow-300 hover:text-black">
+      <button
+        onClick={() => setpage("Home")} // 2. เมื่อคลิก ให้เซตค่าเป็น 'home'
+        className="px-2 py-1 h-9  rounded-xl bg-gray-800 text-white hover:bg-yellow-300 hover:text-black"
+      >
         Home
       </button>
       <button className="px-2 py-1 h-9 rounded-xl bg-gray-800 text-white hover:bg-yellow-300 hover:text-black">

@@ -4,6 +4,8 @@ import Castle from "./components/01_Castle";
 import Home from "./components/Home";
 import NavBar from "./components/NavBar";
 import Counter from "./components/Counter";
+import Form from "./components/Form";
+import Toggle from "./components/Toggle";
 
 export default function App() {
   const { question, handleQuestion, answer } = useContext(MessageContext);
@@ -18,6 +20,9 @@ export default function App() {
         {/* ✨ 5. ใช้เงื่อนไขเช็ค: ถ้า page คือ 'home' ให้โชว์หน้า Home ถ้าไม่ใช่ค่อยโชว์อย่างอื่น */}
         {page === "Home" && <Home />}
         {page === "Counter" && <Counter />}
+        {page === "Form" && <Form />}
+        {page === "Toggle" && <Toggle />}
+
         {page === "Castle" && (
           <>
             <h1 className="text-5xl">🚩 Learn React with Castle Rooms 🏰</h1>
